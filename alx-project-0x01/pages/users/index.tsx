@@ -20,7 +20,7 @@ const Users : React.FC<UsersPageProps> = ({posts}) => {
         </div>
 
         <div className="grid grid-cols-3 gap-4">
-          {posts?.map((user: UserProps) => (
+          {posts.map((user: UserProps) => (
             <UserCard key={user.id} {...user} />
           ))}
         </div>
@@ -38,4 +38,4 @@ export async function getStaticProps() {
     },
   };
 }
-export default Users
+export default Users;
