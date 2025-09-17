@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { UserData, UserModalProps } from "@/interfaces";
 
-const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
+const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const [formData, setFormData] = useState<Partial<UserData>>({});
 
   if (!isOpen) return null;
@@ -35,7 +35,7 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
       },
     };
 
-    onSave(newUser);
+    onSubmit(newUser);
     onClose();
   };
 
